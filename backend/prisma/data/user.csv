@@ -1,0 +1,2 @@
+id,name,email,phone,imageUrl,gender,personalAbout,professionalAbout,birthDate,location
+1,"Claudio Lins","claudio.lins@me.com","910344904","https://github.com/claudio-lins.png",MALE,"Sobre mim","Sobre mim","1972-09-01","Lisboa"

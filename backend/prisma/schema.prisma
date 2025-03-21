@@ -14,6 +14,44 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
+
+enum MaritalStatus {
+  SINGLE
+  MARRIED
+  DIVORCED
+  WIDOWER
+}
+
+model User {
+  id                Int            @id @default(autoincrement())
+  name              String
+  email             String
+  phone             String
+  imageUrl          String
+  gender            Gender
+  maritalStatus     MaritalStatus?
+  personalAbout     String
+  professionalAbout String
+  birthDate         DateTime
+  location          String
+  createdAt         DateTime       @default(now())
+}
+
+model Education {
+  id        Int      @id @default(autoincrement())
+  course    String
+  type      String   @default("course")
+  entity    String
+  location  String
+  startDate DateTime
+  endDate   DateTime
+}
+
 model Technology {
   id          Int       @id @default(autoincrement())
   name        String
