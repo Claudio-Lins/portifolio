@@ -1,52 +1,68 @@
-import { Id } from "@core"
-import useLocalStorage from "./useLocalStorage"
-import Mensagem from "@/model/Mensagem"
-import conversar from "@/functions/chat"
-import { useState } from "react"
+"use client";
 
-export default function useChat() {
-	const [chatId] = useLocalStorage<string>("chatId", Id.gerar())
-	const [mensagens, setMensagens] = useLocalStorage<Mensagem[]>("mensagens", [])
-	const [pensando, setPensando] = useState(false)
+import { talk } from "@/functions/chat";
+import type { Message } from "@/model/message";
+import { Id } from "@core";
+import { useState } from "react";
+import { useLocalStorage } from "./useLocalStorage";
+export function useChat() {
+	const [chatId] = useLocalStorage<string>("chatId", Id.generate());
+	const [messages, setMessages] = useLocalStorage<Message[]>("messages", []);
+	const [thinking, setThinking] = useState(false);
+	const [error, setError] = useState<string | null>(null);
 
-	async function adicionarMensagem(texto: string) {
+	async function addMessage(text: string) {
 		try {
-			setPensando(true)
-			const novaMensagem: Mensagem = {
-				id: Id.gerar(),
-				texto,
-				autor: "Visitante",
-				lado: "direito",
+			setThinking(true);
+			setError(null);
+
+			const newMessage: Message = {
+				id: Id.generate(),
+				text: text,
+				author: "Guest",
+				side: "right",
+			};
+
+			setMessages((msgs) => [...msgs, newMessage]);
+
+			const answer = await talk(chatId, newMessage);
+			console.log("Resposta recebida:", answer);
+
+			if (!answer) {
+				setError(
+					"Não foi possível obter uma resposta do servidor. Tente novamente mais tarde.",
+				);
+				console.log("Não consegui entender a sua mensagem");
+				return;
 			}
 
-			setMensagens((msgs) => [...msgs, novaMensagem])
+			const answerMessage: Message = {
+				id: Id.generate(),
+				text: answer,
+				author: "Claudio",
+				side: "left",
+			};
 
-			const resposta = await conversar(chatId, novaMensagem)
-
-			if (!resposta) return
-
-			const mensagemResposta: Mensagem = {
-				id: Id.gerar(),
-				texto: resposta,
-				autor: "Assistente",
-				lado: "esquerdo",
-			}
-
-			setMensagens((msgs) => [...msgs, mensagemResposta])
+			setMessages((msgs) => [...msgs, answerMessage]);
+		} catch (err) {
+			console.error("Erro ao processar mensagem:", err);
+			setError("Ocorreu um erro ao processar sua mensagem. Tente novamente.");
 		} finally {
-			setPensando(false)
+			setThinking(false);
 		}
 	}
 
-	function limparMensagens() {
-		setMensagens([])
+	function clearMessages() {
+		setMessages([]);
+		setError(null);
 	}
 
 	return {
 		chatId,
-		mensagens,
-		pensando,
-		adicionarMensagem,
-		limparMensagens,
-	}
+		messages,
+		thinking,
+		error,
+		addMessage,
+		clearMessages,
+	};
 }

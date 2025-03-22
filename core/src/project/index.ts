@@ -1,5 +1,6 @@
 import type { Level } from "./Level";
 import type { Project } from "./Project";
-import type { ProjectType } from "./Type";
+import { ProjectType } from "./Type";
 
-export type { Level, Project, ProjectType };
+export { ProjectType };
+export type { Level, Project };
