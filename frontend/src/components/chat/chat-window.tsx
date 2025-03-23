@@ -1,23 +1,34 @@
 "use client";
 
+import thinkingBallon from "#/pensando.gif";
 import { ContentMD } from "@/components/shared/ContentMD";
 import { useChat } from "@/hooks/useChat";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
-
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 export function ChatWindow() {
 	const { chatId, messages, addMessage, thinking, clearMessages, error } =
 		useChat();
 	const [text, setText] = useState("");
+	const endChatRef = useRef<HTMLDivElement>(null);
+
+	// Efeito para rolar a visualização para o fim do chat
+	useEffect(() => {
+		if (endChatRef.current) {
+			endChatRef.current.scrollIntoView({ behavior: "smooth" });
+		}
+	});
 
 	return (
 		<div
-			className={cn("bg-zinc-950 w-full max-w-xl rounded-lg text-zinc-100 p-4")}
+			className={cn(
+				"bg-zinc-950 w-full max-w-sm md:max-w-xl rounded-lg text-zinc-100 p-4",
+			)}
 		>
 			<div className={cn("w-full mx-auto")}>
 				<div className={cn("flex flex-col gap-4")}>
-					<h1 className={cn("text-2xl font-bold text-zinc-50")}>
-						Chat com Assistente
+					<h1 className={cn("text-xl md:text-2xl font-bold text-zinc-50")}>
+						Chat com Claudio Lins
 					</h1>
 
 					{error && (
@@ -32,17 +43,17 @@ export function ChatWindow() {
 
 					<div
 						className={cn(
-							"border border-zinc-800 bg-zinc-900 rounded-lg p-4 h-[400px] overflow-y-auto",
+							"border border-zinc-800 bg-zinc-900 rounded-lg p-4 h-[250px] md:h-[300px] overflow-y-auto",
 						)}
 					>
 						{messages.length === 0 ? (
 							<div className="text-center text-zinc-500 p-4">
-								Envie uma mensagem para iniciar a conversa.
+								Envie uma mensagem para iniciar a conversa com o Claudio Lins.
 							</div>
 						) : (
-							<ul className={cn("flex flex-col gap-3")}>
+							<div className={cn("flex flex-col gap-3")}>
 								{messages.map((message) => (
-									<li
+									<div
 										key={message.id}
 										className={cn(
 											"p-3 rounded-lg max-w-[80%]",
@@ -62,11 +73,11 @@ export function ChatWindow() {
 											{message.author}
 										</div>
 										<ContentMD markdown={message.text} />
-									</li>
+									</div>
 								))}
 
 								{thinking && (
-									<li
+									<div
 										className={cn(
 											"bg-zinc-800 self-start p-3 rounded-lg animate-pulse",
 										)}
@@ -74,12 +85,20 @@ export function ChatWindow() {
 										<div
 											className={cn("text-xs font-medium mb-1 text-zinc-400")}
 										>
-											Assistente
+											Claudio Lins
 										</div>
-										<div className={cn("text-sm")}>Digitando...</div>
-									</li>
+										<div className={cn("text-sm")}>
+											<Image
+												src={thinkingBallon}
+												alt="Loading"
+												width={50}
+												height={50}
+											/>
+										</div>
+										<div ref={endChatRef} />
+									</div>
 								)}
-							</ul>
+							</div>
 						)}
 					</div>
 

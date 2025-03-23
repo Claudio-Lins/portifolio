@@ -8,18 +8,27 @@ interface HighlightTechsProps {
 
 export function HighlightTechs({ highlightTechs }: HighlightTechsProps) {
 	return highlightTechs ? (
-		<div className={cn("flex items-center justify-center gap-4")}>
+		<div
+			className={cn(
+				"flex flex-wrap items-center justify-center gap-4 max-w-full",
+			)}
+		>
 			{highlightTechs.map((technology) => (
 				<div
 					key={technology.id}
-					className={cn("flex items-center justify-center relative size-12")}
+					className={cn("flex flex-col items-center justify-center gap-1 p-1")}
 				>
-					<Image
-						src={technology?.imageUrl}
-						alt={technology.name}
-						fill
-						className="object-contain"
-					/>
+					<div className="relative size-8 sm:size-10 md:size-12">
+						<Image
+							src={technology?.imageUrl}
+							alt={technology.name}
+							fill
+							className="object-contain"
+						/>
+					</div>
+					<span className="text-xs text-zinc-400 text-center whitespace-nowrap">
+						{technology.name}
+					</span>
 				</div>
 			))}
 		</div>
