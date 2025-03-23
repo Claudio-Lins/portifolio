@@ -1,11 +1,11 @@
 # import {} from '@core"
 
-POST http://localhost:5678/webhook/personal-assitent
+POST https://claudiolins.fly.dev/webhook/personal-assitent
 Content-Type: application/json
 
 {
   "chatId": "1234567890",
-  "message": "Você trabalha com Next.js?"
+  "message": "Tem experiencia em Prisma?"
 }
 
 

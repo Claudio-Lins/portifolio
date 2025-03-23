@@ -43,13 +43,11 @@ model User {
 }
 
 model Education {
-  id        Int      @id @default(autoincrement())
-  course    String
-  type      String   @default("course")
-  entity    String
-  location  String
+  id        String    @id @default(cuid())
+  school    String
+  field     String
   startDate DateTime
-  endDate   DateTime
+  endDate   DateTime?
 }
 
 model Technology {
@@ -75,4 +73,46 @@ model Project {
   technologies  Technology[]
 
   @@map("projects")
+}
+
+model SocialNetwork {
+  id   String @id @default(cuid())
+  name String
+  url  String
+
+  createdAt DateTime @default(now())
+}
+
+model WorkExperience {
+  id             String         @id @default(cuid())
+  title          String
+  description    String
+  company        String
+  location       String
+  startDate      DateTime
+  endDate        DateTime?
+  isCurrent      Boolean        @default(false)
+  link           String?
+  employmentType EmploymentType
+  workLocation   WorkLocation
+}
+
+enum EmploymentType {
+  FREELANCER
+  VOLUNTEER
+  EMPLOYEE
+}
+
+enum WorkLocation {
+  REMOTE
+  ONSITE
+  HYBRID
+}
+
+model Reference {
+  id    String  @id @default(cuid())
+  name  String
+  email String
+  phone String?
+  role  String?
 }

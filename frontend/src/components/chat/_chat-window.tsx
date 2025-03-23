@@ -11,14 +11,15 @@ export function ChatWindow() {
 	const [text, setText] = useState("");
 
 	return (
-		<div
-			className={cn("bg-zinc-950 w-full max-w-xl rounded-lg text-zinc-100 p-4")}
-		>
-			<div className={cn("w-full mx-auto")}>
+		<div className={cn("bg-zinc-950 min-h-screen p-20 text-zinc-100")}>
+			<div className={cn("max-w-2xl mx-auto mt-8")}>
 				<div className={cn("flex flex-col gap-4")}>
 					<h1 className={cn("text-2xl font-bold text-zinc-50")}>
 						Chat com Assistente
 					</h1>
+					<div className={cn("text-xs text-zinc-400")}>
+						ID da Conversa: {chatId}
+					</div>
 
 					{error && (
 						<div

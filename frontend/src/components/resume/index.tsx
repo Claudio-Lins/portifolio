@@ -8,7 +8,7 @@ interface ResumeProps {
 
 export function Resume({ technologies }: ResumeProps) {
 	return (
-		<div className={cn("")}>
+		<div className={cn("flex flex-col items-end justify-end")}>
 			<UsedTechs technologies={technologies} />
 		</div>
 	);

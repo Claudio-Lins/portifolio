@@ -1,15 +1,28 @@
-"use client";
 import { useEffect, useState } from "react";
 
 export function useLocalStorage<T>(key: string, initialValue: T) {
-	const [value, setValue] = useState<T>(() => {
-		const item = localStorage.getItem(key);
-		return item ? JSON.parse(item) : initialValue;
+	const [storedValue, setStoredValue] = useState<T>(() => {
+		if (typeof window === "undefined") {
+			return initialValue;
+		}
+		try {
+			const item = window.localStorage.getItem(key);
+			return item ? JSON.parse(item) : initialValue;
+		} catch (error) {
+			console.error("Erro ao acessar localStorage:", error);
+			return initialValue;
+		}
 	});
 
 	useEffect(() => {
-		localStorage.setItem(key, JSON.stringify(value));
-	}, [key, value]);
+		if (typeof window !== "undefined") {
+			try {
+				localStorage.setItem(key, JSON.stringify(storedValue));
+			} catch (error) {
+				console.error("Erro ao salvar no localStorage:", error);
+			}
+		}
+	}, [key, storedValue]);
 
-	return [value, setValue] as const;
+	return [storedValue, setStoredValue] as const;
 }

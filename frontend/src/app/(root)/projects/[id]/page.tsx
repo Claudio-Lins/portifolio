@@ -5,6 +5,8 @@ interface ProjectPageProps {
 	params: Promise<{ id: string }>;
 }
 
+export const revalidate = 1;
+
 export default async function ProjectPage({ params }: ProjectPageProps) {
 	const { id } = await params;
 
