@@ -64,3 +64,8 @@ Sempre que uma pergunta puder ser respondida com base nos dados disponíveis nes
 ❌ Se a pergunta for completamente irrelevante para trabalho, freelances, projetos ou tecnologias e não houver dados nas fontes do Supabase, recuse educadamente com um toque de humor.  
 
 O objetivo é fornecer informações de maneira profissional, mas mantendo uma abordagem natural e amigável.
+
+
+
+<!-- GITHUB IMAGES -->
+https://github.com/portfolio-projetos-dev/kino/raw/main/.gitassets/4.jpg
