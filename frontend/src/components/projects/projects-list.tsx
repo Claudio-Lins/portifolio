@@ -1,20 +1,43 @@
 import { cn } from "@/lib/utils";
 import type { Project } from "@core/index";
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious,
+} from "../ui/carousel";
 import { ProjectCard } from "./project-card";
 
 interface ProjectsListProps {
+	title: string;
 	projectsList: Project[];
 }
 
-export function ProjectsList({ projectsList }: ProjectsListProps) {
+export function ProjectsList({ title, projectsList }: ProjectsListProps) {
 	return (
-		<div className={cn("")}>
-			<h1>ProjectsList</h1>
-			<div className={cn("flex items-center justify-center flex-wrap gap-4")}>
-				{projectsList.map((project) => (
-					<ProjectCard key={project.id} project={project} />
-				))}
-			</div>
+		<div className="flex flex-col items-center sm:items-start w-7/10 md:w-11/12 xl:w-full gap-5">
+			<h3 className="text-2xl font-bold text-white/70">{title}</h3>
+			<Carousel
+				opts={{
+					align: "center",
+					loop: true,
+				}}
+				className="w-full"
+			>
+				<CarouselContent className="flex">
+					{projectsList.map((project) => (
+						<CarouselItem
+							key={project.id}
+							className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+						>
+							<ProjectCard project={project} />
+						</CarouselItem>
+					))}
+				</CarouselContent>
+				<CarouselPrevious />
+				<CarouselNext />
+			</Carousel>
 		</div>
 	);
 }
