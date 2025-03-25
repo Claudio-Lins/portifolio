@@ -17,24 +17,30 @@ export default async function Projects() {
 	return (
 		<div className={cn("flex flex-col pt-24 bg-zinc-950 w-full min-h-dvh")}>
 			<Container className="flex flex-col gap-8">
-				<ProjectsList
-					title="Web"
-					projectsList={projects.filter(
-						(project) => project.type === ProjectType.WEB,
-					)}
-				/>
-				<ProjectsList
-					title="Mobile"
-					projectsList={projects.filter(
-						(project) => project.type === ProjectType.MOBILE,
-					)}
-				/>
-				<ProjectsList
-					title="Games"
-					projectsList={projects.filter(
-						(project: Project) => project.type === ProjectType.GAME,
-					)}
-				/>
+				{projects.some((project) => project.type === ProjectType.WEB) && (
+					<ProjectsList
+						title="Web"
+						projectsList={projects.filter(
+							(project) => project.type === ProjectType.WEB,
+						)}
+					/>
+				)}
+				{projects.some((project) => project.type === ProjectType.MOBILE) && (
+					<ProjectsList
+						title="Mobile"
+						projectsList={projects.filter(
+							(project) => project.type === ProjectType.MOBILE,
+						)}
+					/>
+				)}
+				{projects.some((project) => project.type === ProjectType.GAME) && (
+					<ProjectsList
+						title="Games"
+						projectsList={projects.filter(
+							(project: Project) => project.type === ProjectType.GAME,
+						)}
+					/>
+				)}
 			</Container>
 		</div>
 	);

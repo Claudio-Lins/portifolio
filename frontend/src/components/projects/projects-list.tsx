@@ -25,7 +25,9 @@ export function ProjectsList({ title, projectsList }: ProjectsListProps) {
 				}}
 				className="w-full"
 			>
-				<CarouselContent className="flex">
+				<CarouselContent
+					className={cn("flex", projectsList.length < 4 && "gap-12")}
+				>
 					{projectsList.map((project) => (
 						<CarouselItem
 							key={project.id}
