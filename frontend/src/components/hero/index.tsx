@@ -13,9 +13,9 @@ interface HeroProps {
 
 export function Hero({ technologies, highlightTechs }: HeroProps) {
 	return (
-		<div className="w-full overflow-y-auto overflow-x-hidden flex flex-col items-center bg-black min-h-dvh pt-10">
-			<Container className="flex flex-col items-center justify-start gap-8 w-full px-4 py-8">
-				<div className="flex flex-col md:flex-row w-full items-center justify-between gap-6">
+		<div className="w-full overflow-y-auto overflow-x-hidden flex flex-col items-center bg-black min-h-dvh py-10">
+			<Container className="flex flex-col items-center justify-between gap-8 w-full px-4 py-8 h-full">
+				<div className="flex flex-col md:flex-row w-full items-center justify-between gap-4 h-full">
 					<div className="flex flex-col items-center justify-center w-full md:w-1/2">
 						<h1 className="text-4xl md:text-6xl text-zinc-100 font-bold text-center">
 							Claudio Lins
@@ -40,7 +40,7 @@ export function Hero({ technologies, highlightTechs }: HeroProps) {
 						<ChatWindow />
 					</div>
 				</div>
-				<div className="w-full pt-4 overflow-x-auto">
+				<div className="w-full">
 					<Resume technologies={technologies} />
 				</div>
 			</Container>
