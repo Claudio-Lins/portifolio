@@ -13,12 +13,16 @@ interface UsedTechsProps {
 
 export function UsedTechs({ technologies }: UsedTechsProps) {
 	return technologies ? (
-		<div className={cn("flex flex-wrap items-center justify-center gap-2")}>
+		<div
+			className={cn(
+				"flex flex-wrap items-center justify-center gap-2 sm:px-40",
+			)}
+		>
 			{technologies.map((technology) => (
 				<TooltipProvider key={technology.id}>
 					<Tooltip>
-						<TooltipTrigger className="flex items-center text-sm text-zinc-100 justify-center bg-transparent sm:bg-zinc-800 rounded-lg px-3 py-1 cursor-pointer hover:scale-105 transition-all duration-300 gap-2">
-							<div className="relative size-6 sm:size-10 md:size-12">
+						<TooltipTrigger className="flex flex-col items-center text-sm text-zinc-100 justify-center bg-transparent  rounded-lg px-3 py-1 cursor-pointer hover:scale-105 transition-all duration-300 gap-2">
+							<div className="relative size-6">
 								<Image
 									src={technology?.imageUrl}
 									alt={technology.name}
@@ -30,7 +34,7 @@ export function UsedTechs({ technologies }: UsedTechsProps) {
 								{technology.name}
 							</span>
 						</TooltipTrigger>
-						<TooltipContent className="bg-zinc-800 text-white">
+						<TooltipContent className="bg-zinc-800 text-white text-center max-w-[200px]">
 							<p>{technology.description}</p>
 						</TooltipContent>
 					</Tooltip>
