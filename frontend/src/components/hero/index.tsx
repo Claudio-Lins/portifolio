@@ -32,7 +32,7 @@ export function Hero({ technologies, highlightTechs }: HeroProps) {
 								className="rounded-lg"
 							/>
 						</div>
-						<div className="mt-4 w-full flex justify-center px-2">
+						<div className="mt-0 w-full flex justify-center px-0">
 							<HighlightTechs highlightTechs={highlightTechs} />
 						</div>
 					</div>

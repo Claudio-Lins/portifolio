@@ -10,7 +10,7 @@ export function HighlightTechs({ highlightTechs }: HighlightTechsProps) {
 	return highlightTechs ? (
 		<div
 			className={cn(
-				"flex flex-wrap items-center justify-center gap-4 max-w-full",
+				"flex flex-wrap items-center justify-center gap-2 md:gap-4 max-w-full",
 			)}
 		>
 			{highlightTechs.map((technology) => (
@@ -18,7 +18,7 @@ export function HighlightTechs({ highlightTechs }: HighlightTechsProps) {
 					key={technology.id}
 					className={cn("flex flex-col items-center justify-center gap-1 p-1")}
 				>
-					<div className="relative size-8 sm:size-10 md:size-12">
+					<div className="relative size-6 sm:size-10 md:size-12">
 						<Image
 							src={technology?.imageUrl}
 							alt={technology.name}
@@ -26,7 +26,7 @@ export function HighlightTechs({ highlightTechs }: HighlightTechsProps) {
 							className="object-contain"
 						/>
 					</div>
-					<span className="text-xs text-zinc-400 text-center whitespace-nowrap">
+					<span className="hidden sm:block text-xs text-zinc-400 text-center whitespace-nowrap">
 						{technology.name}
 					</span>
 				</div>

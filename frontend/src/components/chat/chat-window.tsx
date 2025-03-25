@@ -22,12 +22,16 @@ export function ChatWindow() {
 	return (
 		<div
 			className={cn(
-				"bg-zinc-950 w-full max-w-sm md:max-w-xl rounded-lg text-zinc-100 p-4",
+				"bg-zinc-950 w-full max-w-sm md:max-w-xl rounded-lg text-zinc-100 p-2",
 			)}
 		>
 			<div className={cn("w-full mx-auto")}>
 				<div className={cn("flex flex-col gap-4")}>
-					<h1 className={cn("text-xl md:text-2xl font-bold text-zinc-50")}>
+					<h1
+						className={cn(
+							"text-xl md:text-2xl font-bold text-zinc-50 text-center",
+						)}
+					>
 						Chat com Claudio Lins
 					</h1>
 
