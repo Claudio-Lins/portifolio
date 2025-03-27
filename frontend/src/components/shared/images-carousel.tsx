@@ -16,8 +16,11 @@ export function ImagesCarousel({ images }: ImagesCarouselProps) {
 		<Carousel opts={{ loop: true }} className="w-7/10 md:w-11/12 xl:w-full">
 			<CarouselContent>
 				{images.map((image) => (
-					<CarouselItem key={image} className="relative h-96 w-full">
-						<Image src={image} alt="Imagem" fill className="object-cover" />
+					<CarouselItem
+						key={image}
+						className="relative h-96 md:h-[540px] w-full"
+					>
+						<Image src={image} alt="Imagem" fill className="object-contain" />
 					</CarouselItem>
 				))}
 			</CarouselContent>
