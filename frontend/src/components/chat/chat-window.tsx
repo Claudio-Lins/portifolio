@@ -60,7 +60,7 @@ export function ChatWindow() {
 									<div
 										key={message.id}
 										className={cn(
-											"p-3 rounded-lg max-w-[80%]",
+											"p-3 rounded-lg max-w-[90%]",
 											message.side === "right"
 												? "bg-indigo-900/70 self-end text-zinc-100"
 												: "bg-zinc-800 self-start text-zinc-100",

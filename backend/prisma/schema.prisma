@@ -116,3 +116,10 @@ model Reference {
   phone String?
   role  String?
 }
+
+model Chat {
+  id        String @id @default(cuid())
+  sessionId String
+  sender    String
+  messages  String
+}
