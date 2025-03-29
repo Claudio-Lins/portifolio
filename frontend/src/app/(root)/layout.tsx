@@ -10,7 +10,6 @@ export default function RootLayout({
 		<div className="">
 			<Header />
 			{children}
-			<ChatBtn />
 		</div>
 	);
 }

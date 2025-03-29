@@ -10,15 +10,15 @@ export function Menu() {
 			<MenuItem href="/" selected={pathname === "/"}>
 				Home
 			</MenuItem>
-			{/* <MenuItem href="/about" selected={pathname === "/about"}>
-				About
-			</MenuItem> */}
 			<MenuItem href="/projects" selected={pathname === "/projects"}>
 				Projects
 			</MenuItem>
-			<MenuItem href="/contact" selected={pathname === "/contact"}>
-				Contact
+			<MenuItem href="/about" selected={pathname === "/about"}>
+				About
 			</MenuItem>
+			{/* <MenuItem href="/contact" selected={pathname === "/contact"}>
+				Contact
+			</MenuItem> */}
 		</nav>
 	);
 }

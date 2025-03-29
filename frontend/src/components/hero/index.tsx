@@ -33,7 +33,7 @@ export function Hero({ technologies, highlightTechs }: HeroProps) {
 							/>
 						</div>
 						<div className="mt-0 w-full flex justify-center px-0">
-							<HighlightTechs highlightTechs={highlightTechs} />
+							{/* <HighlightTechs highlightTechs={highlightTechs} /> */}
 						</div>
 					</div>
 					<div className="w-full md:w-1/2 flex justify-center">
