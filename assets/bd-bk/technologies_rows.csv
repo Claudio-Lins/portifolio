@@ -1,0 +1,16 @@
+id,name,description,imageUrl,highlight
+1,HTML,Linguagem de marcação para estruturação de páginas web.,https://github.com/portfolio-projetos-dev/assets/raw/main/images/html.svg,false
+2,CSS,Linguagem de estilos para definição do design e layout das páginas web.,https://github.com/portfolio-projetos-dev/assets/raw/main/images/css.svg,false
+3,JavaScript,Linguagem de programação para interatividade em páginas web.,https://github.com/portfolio-projetos-dev/assets/raw/main/images/javascript.svg,false
+4,TypeScript,Superset do JavaScript que adiciona tipagem estática.,https://github.com/portfolio-projetos-dev/assets/raw/main/images/typescript.svg,true
+5,Node.js,Ambiente de execução JavaScript no lado do servidor.,https://github.com/portfolio-projetos-dev/assets/raw/main/images/node.svg,false
+9,Express.js,Framework web minimalista para Node.js.,https://github.com/portfolio-projetos-dev/assets/raw/main/images/express.svg,false
+10,React,Biblioteca JavaScript para construção de interfaces de usuário.,https://github.com/portfolio-projetos-dev/assets/raw/main/images/react.svg,true
+14,PostgreSQL,Sistema de gerenciamento de banco de dados relacional avançado.,https://github.com/portfolio-projetos-dev/assets/raw/main/images/postgresql.svg,false
+17,Docker,"Plataforma para criação, execução e gerenciamento de containers.",https://github.com/portfolio-projetos-dev/assets/raw/main/images/docker.svg,false
+21,React Native,Biblioteca para desenvolvimento de aplicativos móveis com React.,https://github.com/portfolio-projetos-dev/assets/raw/main/images/react.svg,true
+22,Next.js,Framework React para construção de aplicações web.,https://github.com/portfolio-projetos-dev/assets/raw/main/images/next.svg,true
+23,Prisma,ORM para Node.js e TypeScript com suporte a diversos bancos de dados.,https://github.com/portfolio-projetos-dev/assets/raw/main/images/prisma.svg,true
+24,Supabase,Plataforma open-source para desenvolvimento de aplicativos web e APIs.,https://raw.githubusercontent.com/claudio-lins-dev/assets/19b061b9e86a775581a877878e4d7cae5c93a9a9/imageTech/supabase.svg,false
+25,Tailwind CSS,Framework CSS para construção de interfaces de usuário.,https://github.com/portfolio-projetos-dev/assets/raw/main/images/tailwind.svg,true
+26,Strapi,Strapi é um CMS de código aberto para gerenciamento de conteúdo.,https://raw.githubusercontent.com/claudio-lins-dev/assets/0307206437c61800479a157f1bf8e91f267721c7/imageTech/strapi.svg,true

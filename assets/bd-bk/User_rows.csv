@@ -1,0 +1,37 @@
+id,name,lastName,email,phone,imageUrl,gender,maritalStatus,personalAbout,professionalAbout,birthDate,location,street,city,state,country,zip,createdAt
+1,Claudio,Lins,claudio.lins@me.com,910344904,https://github.com/claudio-lins.png,MALE,MARRIED,"Sou brasileiro e vivo em Portugal há mais de sete anos. Nasci em Recife, Pernambuco, mas fui criado no interior de São Paulo, na região do Vale do Paraíba, em uma pequena cidade chamada Natividade da Serra. Passei minha adolescência lá e, aos 17 anos, me mudei para Ubatuba, no litoral norte de São Paulo, onde morei por aproximadamente um ano. Em meados de 1990, segui para São Paulo, capital.
+
+Meu primeiro emprego foi como office-boy em uma agência de publicidade. Rapidamente fui promovido para boy de estúdio (área de arte), e, para me aprimorar, comecei um curso de paste-up no Senac após o expediente, demonstrando ainda mais interesse pela profissão. Após quatro anos na agência Bonturi && Barone e Associados, fui convidado pelo filho do dono para trabalhar com ele em um birô de finalização, por volta de 1995. Esse birô era totalmente digital e usava a plataforma Macintosh (Apple), que começava a se popularizar nas agências de publicidade em São Paulo. Para me especializar, me pagaram um curso concorrido em uma gráfica chamada Takano.
+
+Ao longo dos anos seguintes, trabalhei em diversas agências de publicidade em São Paulo, atuando como arte-finalista e assistente de criação. Em 1999, decidi morar nos Estados Unidos, mais precisamente em Athens, Georgia, onde fiz um curso de Inglês. Morei lá por exatamente três anos.
+
+Quando retornei ao Brasil, em menos de uma semana já estava empregado em uma grande agência em São Paulo. Em 2003, me casei e me mudei para Salvador, Bahia, onde continuei trabalhando no setor publicitário. Em 14 de abril de 2008, nasceu minha filha, Estela Montenegro Lins. Morei em Salvador por seis anos, mas, após me separar, voltei para São Paulo.
+
+De volta à capital paulista, comecei a trabalhar para um grande grupo atacadista, o Pão de Açúcar/Casino.
+
+Em dezembro de 2014, iniciei minha graduação em Fotografia (Undergraduate Degree in Photography) na FMU – Faculdades Metropolitanas Unidas, São Paulo (Brasil).
+
+Atualmente estou caso com Karen Hermann.","I've always been passionate about technology, studying and creating projects daily to become an excellent Software Engineer. Currently, my focus is on Front-end development. I delight in crafting visually stunning user interfaces.
+I specialize in Front-end and Mobile Development, crafting visually stunning, highly functional, and responsive user interfaces.
+My expertise includes building projects using technologies like React, React Native, Next.js,
+Expo, TypeScript, working with both REST APIs and GraphQL, modern CSS solutions like Tailwind CSS,
+and testing with Cypress.
+
+While my primary focus is on Front-end Development,
+
+I am also proficient in backend development using Node.js,
+
+Prisma, and CMS platforms such as Hygraph and Strapi. Additionally,
+
+I have experience working with databases like Postgres, MySQL, and MongoDB,
+
+ensuring seamless integration and delivering end-to-end solutions.
+Additionally, thanks to my background as a photographer and designer, I bring a unique combination of technical and creative skills to my work.
+This enables me to seamlessly transform graphic layouts from tools like Figma, Illustrator, and Photoshop into responsive and visually stunning web applications.
+I have advanced English skills, developed during the three years I lived in the United States in 2000 and further enhanced through my studies at the University of Georgia. Additionally, I spent 8 months in Dublin, Ireland, in 2024.
+Soft Skills
+Passion for Learning, Attention to Detail, Organization, Teamwork, Creativity, Adaptability, Persistence.
+Hard Skills
+ReactJs, Next.js, React Native, Expo, TypeScript, JavaScript, NodeJs, Strapi, Hygraph, Docker, Rest API, Prisma, Supabase, TailwindCSS, Styled Components, Html, CSS, Storybooks, Zustand, Zod, React-hook-form, I18N, Git
+Databases: Postgres, MySQL, MongoDb 
+UI Tools: Figma, InDesign, Photoshop, Illustrator ",1972-09-01 00:00:00,Lisboa,"Rua Marquês de Fronteira","Lisboa","Lisboa","Portugal","1070-051",2025-03-21 11:44:26.382
