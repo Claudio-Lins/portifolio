@@ -1,15 +1,23 @@
 import { Contacts } from "@/components/about/contacts";
 import { Education } from "@/components/about/education";
 import { Name } from "@/components/about/name";
+import { ProfessionalAbout } from "@/components/about/professional-about";
 import { Role } from "@/components/about/role";
+import { Skills } from "@/components/about/skills";
+import { WorkExperience } from "@/components/about/work-experiense";
 import { Container } from "@/components/shared/Container";
+import { ContentMD } from "@/components/shared/ContentMD";
 import { getEducations } from "@/functions/education";
+import { getTechnologies } from "@/functions/technologies";
 import { getUsers } from "@/functions/user";
+import { getWorkExperiences } from "@/functions/work-experiences";
 import { cn } from "@/lib/utils";
 
 export default async function About() {
 	const { users } = await getUsers();
 	const { educations } = await getEducations();
+	const { all: technologies } = await getTechnologies();
+	const workExperiences = await getWorkExperiences();
 	return (
 		<div className={cn("flex flex-col pt-24 bg-zinc-950 w-full min-h-dvh")}>
 			<Container className="w-full flex flex-col p-4 gap-8 border-2 border-zinc-500 rounded-lg">
@@ -35,12 +43,31 @@ export default async function About() {
 							// socialNetworks={users[0]?.socialNetworks || []}
 						/>
 						<div className="w-full h-px bg-gradient-to-r from-zinc-300/10 via-zinc-500 to-zinc-400/10 print:hidden" />
-						{/* {educations.length > 0 && ( */}
-						<>
-							<Education educations={educations || []} />
-							<div className="w-full h-px bg-gradient-to-r from-zinc-300/10 via-zinc-500 to-zinc-400/10" />
-						</>
-						{/* )} */}
+						{educations.length > 0 && (
+							<>
+								<Education educations={educations || []} />
+								<div className="w-full h-px bg-gradient-to-r from-zinc-300/10 via-zinc-500 to-zinc-400/10" />
+							</>
+						)}
+						<Skills technologies={technologies || []} />
+						<div className="w-full h-px bg-gradient-to-r from-zinc-300/10 via-zinc-500 to-zinc-400/10" />
+					</div>
+					<div className="w-px sm:col-span-1 min-h-full bg-gradient-to-b from-zinc-300/10 via-zinc-500 to-zinc-400/10 mx-10" />
+					<div className="sm:col-span-8 w-full flex flex-col space-y-10 print:space-y-4 print:-ml-10">
+						<div className="">
+							<h3 className="uppercase font-light print:text-sm text-zinc-100">
+								About
+							</h3>
+							<div className="text-zinc-100 text-sm leading-relaxed text-balance print:leading-relaxed print:h-full print:mt-2 prose prose-zinc prose-invert mt-6 pb-2">
+								<ContentMD markdown={users?.[0]?.professionalAbout || ""} />
+							</div>
+						</div>
+						{workExperiences.length > 0 && (
+							<div className="w-full flex flex-col space-y-10 text-zinc-100 prose prose-zinc prose-invert">
+								<WorkExperience workExperiences={workExperiences} />
+								<div className="w-full h-px bg-gradient-to-r from-zinc-300/10 via-zinc-500 to-zinc-400/10" />
+							</div>
+						)}
 					</div>
 				</div>
 				{/* <pre className="text-zinc-100">{JSON.stringify(users, null, 2)}</pre> */}
