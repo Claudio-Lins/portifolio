@@ -16,7 +16,7 @@ interface ProjectsListProps {
 
 export function ProjectsList({ title, projectsList }: ProjectsListProps) {
 	return (
-		<div className="flex flex-col items-center sm:items-start w-7/10 md:w-11/12 xl:w-full gap-5">
+		<div className="flex flex-col items-center sm:items-start w-[40%] md:w-11/12 xl:w-full gap-5">
 			<h3 className="text-2xl font-bold text-white/70">{title}</h3>
 			<Carousel
 				opts={{

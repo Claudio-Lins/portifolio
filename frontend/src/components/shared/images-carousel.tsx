@@ -13,7 +13,10 @@ export interface ImagesCarouselProps {
 
 export function ImagesCarousel({ images }: ImagesCarouselProps) {
 	return (
-		<Carousel opts={{ loop: true }} className="w-7/10 md:w-11/12 xl:w-full">
+		<Carousel
+			opts={{ loop: true }}
+			className="w-full px-4 md:px-0 md:w-11/12 xl:w-full"
+		>
 			<CarouselContent>
 				{images.map((image) => (
 					<CarouselItem
@@ -24,8 +27,8 @@ export function ImagesCarousel({ images }: ImagesCarouselProps) {
 					</CarouselItem>
 				))}
 			</CarouselContent>
-			<CarouselPrevious />
-			<CarouselNext />
+			<CarouselPrevious className="hidden md:flex" />
+			<CarouselNext className="hidden md:flex" />
 		</Carousel>
 	);
 }

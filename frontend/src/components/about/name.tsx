@@ -10,7 +10,7 @@ interface NameProps {
 
 export function Name({ firstName, lastName, picture, pictureUrl }: NameProps) {
 	return (
-		<div className="flex w-full items-center py-20 justify-between print:pb-10 print:pt-0">
+		<div className="flex w-full items-center py-20 justify-between print:pb-10 print:pt-0 print:py-0">
 			<div
 				className={cn(
 					"w-full flex items-center justify-center space-x-2 text-7xl print:text-5xl tracking-[1rem] uppercase text-zinc-100",

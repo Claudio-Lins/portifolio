@@ -23,11 +23,20 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
 	return (
 		<div className="bg-black">
-			<Container className="py-7 flex flex-col items-center gap-10">
-				<h1 className="text-3xl font-bold self-start">{project.name}</h1>
-				<ImagesCarousel images={project.imagesUrl} />
-				<Technologies list={project.technologies} smaller />
-				<Readme markdown={readme} />
+			<Container
+				className="py-7 flex flex-col items-center gap-10"
+				fullWidthOnMobile
+			>
+				<h1 className="text-3xl font-bold self-start px-4 md:px-0">
+					{project.name}
+				</h1>
+				<div className="w-full">
+					<ImagesCarousel images={project.imagesUrl} />
+				</div>
+				<div className="w-full px-4 md:px-0">
+					<Technologies list={project.technologies} smaller />
+					<Readme markdown={readme} />
+				</div>
 			</Container>
 		</div>
 	);

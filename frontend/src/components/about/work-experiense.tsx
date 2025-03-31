@@ -31,12 +31,8 @@ export function WorkExperience({ workExperiences }: WorkExperienceType) {
 	};
 
 	return (
-		<div
-			className={cn(
-				"font-light text-zinc-600 tracking-widest  print:border-b print:pb-4",
-			)}
-		>
-			<h3 className="uppercase font-light myPrintingSubTitle">
+		<div className="font-light text-zinc-600 tracking-widest">
+			<h3 className="uppercase font-light text-3xl myPrintingSubTitle">
 				Work Experience
 			</h3>
 			{workExperiences?.map((workExperience) => (

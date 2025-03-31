@@ -32,7 +32,7 @@ export function ChatWindow() {
 							"text-xl md:text-2xl font-bold text-zinc-50 text-center",
 						)}
 					>
-						Chat com Claudio Lins
+						Chat with Claudio Lins
 					</h1>
 
 					{error && (
@@ -52,7 +52,8 @@ export function ChatWindow() {
 					>
 						{messages.length === 0 ? (
 							<div className="text-center text-zinc-500 p-4">
-								Envie uma mensagem para iniciar a conversa com o Claudio Lins.
+								I'm Claudio Lins, ask your questions about my work and projects
+								here in the chat.
 							</div>
 						) : (
 							<div className={cn("flex flex-col gap-3")}>
@@ -119,7 +120,7 @@ export function ChatWindow() {
 									}
 								}}
 								onChange={(e) => setText(e.target.value)}
-								placeholder="Digite sua mensagem..."
+								placeholder="Type your message..."
 								className={cn(
 									"flex-1 rounded-md border border-zinc-700 bg-zinc-900 p-3 text-zinc-100 placeholder:text-zinc-500",
 									thinking && "opacity-50 cursor-not-allowed",
@@ -139,7 +140,7 @@ export function ChatWindow() {
 									(thinking || !text.trim()) && "opacity-50 cursor-not-allowed",
 								)}
 							>
-								Enviar
+								Send
 							</button>
 						</div>
 
@@ -149,7 +150,7 @@ export function ChatWindow() {
 								onClick={clearMessages}
 								className="mt-2 text-sm text-zinc-500 hover:text-zinc-300 hover:underline"
 							>
-								Limpar conversa
+								Clear chat
 							</button>
 						)}
 					</div>

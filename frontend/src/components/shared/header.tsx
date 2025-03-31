@@ -6,7 +6,7 @@ import { Menu } from "./menu";
 
 export function Header() {
 	return (
-		<header className="flex items-center h-16 fixed w-full bg-transparent backdrop-blur-sm z-50">
+		<header className="flex items-center h-16 fixed w-full bg-transparent backdrop-blur-sm z-50 print:hidden">
 			<Container className="flex-1 flex items-center justify-between">
 				<Menu />
 				<div className="flex items-center gap-4">
